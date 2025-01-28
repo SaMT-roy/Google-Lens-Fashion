@@ -173,7 +173,7 @@ A custom CLIP-based multi-modal model has been trained for embedding and similar
 
 # 5. Image Similarity Search with CLIP Inference
 
-This repository demonstrates an image similarity search pipeline using a Vision-Language Model (VLM) with CLIP for embedding and inference. It matches textual descriptions with the most relevant images in a dataset.
+This file demonstrates an image similarity search pipeline using a Vision-Language Model (VLM) with CLIP for embedding and inference. It matches textual descriptions with the most relevant images in a dataset.
 
 ## Features
 
