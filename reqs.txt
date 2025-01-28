@@ -1,0 +1,16 @@
+matplotlib
+opencv-python
+Pillow
+google-api-core
+google-generativeai
+jsonschema
+datasets
+pandas
+tqdm
+numpy
+pyyaml
+ultralytics
+timm
+torch
+transformers
+torchvision
