@@ -170,6 +170,42 @@ A custom CLIP-based multi-modal model has been trained for embedding and similar
 - `clip.pt`: Saved weights of the trained CLIP model.
 - `image_embeddings.pt`: Generated embeddings for upper garment images.
 
+
+# 5. Image Similarity Search with CLIP Inference
+
+This repository demonstrates an image similarity search pipeline using a Vision-Language Model (VLM) with CLIP for embedding and inference. It matches textual descriptions with the most relevant images in a dataset.
+
+## Features
+
+1. **Text-to-Image Retrieval**:
+   - Given a textual query, the system retrieves the top `n` images from a pre-embedded image dataset based on cosine similarity.
+
+2. **Pipeline Highlights**:
+   - **Textual Description Generation**: Extracts textual descriptions from input images using a YOLO-based clothing detection model and a Gemini Flash Multimodal model.
+   - **Dimensionality Reduction**: Embeddings are processed through a pretrained sentence transformer and CLIP model to project them into a lower dimension for similarity computation.
+
+3. **Visualization**:
+   - Displays the top matching images and their captions using Matplotlib.
+
+## Components
+
+### Key Functions
+1. **`inference`**:
+   - Accepts a query and retrieves the top `n` relevant images based on similarity.
+   - Visualizes the results in a grid format.
+
+2. **`vlm_text`**:
+   - Processes an input image to generate a textual description using a YOLO-based clothing detection model.
+
+### Input Data
+- **Image Dataset**: Stored in a JSON file (`Cloth Description.json`) with paths and corresponding captions.
+- **Image Embeddings**: Precomputed and stored in `image_embeddings.pt`.
+- **Model Checkpoint**: CLIP model weights loaded from `clip.pt`.
+
+### Inference Workflow
+1. Generate a textual description of an image (`vlm_text`).
+2. Use the textual query in the `inference` function to retrieve and visualize the most relevant images from the dataset.
+
 ### Prerequisites
 - Python 3.8+
 - Required libraries: `torch`, `timm`, `transformers`, `opencv-python`, `Pillow`, `pandas`
